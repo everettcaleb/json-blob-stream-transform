@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "ESNext",
+    "noImplicitAny": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "preserveConstEnums": true,
+    "outDir": "dist",
+    "noImplicitThis": true,
+    "declaration": true,
+    "baseUrl": "./",
+    "pretty": true
+  },
+  "include": [
+    "**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "test",
+    "dist"
+  ]
+}
