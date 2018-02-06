@@ -16,7 +16,7 @@ export default class JsonBlobTransform extends Transform {
     if (typeof chunk == "string") {
       try {
         const writes = this.consumeString(chunk as string);
-        for (let write of writes) {
+        for (const write of writes) {
           this.push(write);
         }
         callback();
@@ -28,7 +28,7 @@ export default class JsonBlobTransform extends Transform {
     else if (chunk instanceof Buffer) {
       try {
         const writes = this.consumeBuffer(chunk as Buffer, encoding);
-        for (let write of writes) {
+        for (const write of writes) {
           this.push(write);
         }
         callback();
@@ -40,7 +40,7 @@ export default class JsonBlobTransform extends Transform {
     else {
       try {
         const writes = this.consumeObject(chunk);
-        for (let write of writes) {
+        for (const write of writes) {
           this.push(write);
         }
         callback();
@@ -60,7 +60,7 @@ export default class JsonBlobTransform extends Transform {
     [...str].forEach((c, i) => {
       if (c == this.expect) {
         this.depth--;
-        if(this.depth == 0) {
+        if (this.depth == 0) {
           writes.push(JSON.parse(combined.slice(snip, len + i)));
           this.expect = "";
           snip = len + i;
@@ -68,7 +68,7 @@ export default class JsonBlobTransform extends Transform {
         return;
       }
       else if (this.depth == 0 && this.expect.length == 0) {
-        switch(c) {
+        switch (c) {
           case "{":
             this.expect = "}";
             this.depth = 1;
@@ -94,7 +94,7 @@ export default class JsonBlobTransform extends Transform {
   }
 
   consumeBuffer(buffer: Buffer, encoding: string): Array<any> {
-    return this.consumeString(buffer.toString('utf8'));
+    return this.consumeString(buffer.toString("utf8"));
   }
 
   consumeObject(obj: any) {
