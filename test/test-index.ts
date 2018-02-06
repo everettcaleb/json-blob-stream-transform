@@ -1,4 +1,4 @@
-import JsonBlobTransform from "../index";
+import * as JsonBlobTransform from "../index";
 import * as assert from "assert";
 import * as fs from "fs";
 

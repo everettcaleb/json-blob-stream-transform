@@ -1,4 +1,4 @@
-const JsonBlobTransform = require('../dist/index').default,
+const JsonBlobTransform = require('../dist/index'),
   child_process = require('child_process');
 
 let t = new JsonBlobTransform();

@@ -1,6 +1,6 @@
 {
   "name": "json-blob-transform",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Node.js Stream Transform for reading arbitrary JSON blobs from a stream (like Standard Input)",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

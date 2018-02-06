@@ -21,7 +21,7 @@ First install it:
 
 Then you can use it in JavaScript:
 
-    const JsonBlobTransform = require('json-blob-transform').default,
+    const JsonBlobTransform = require('json-blob-transform'),
     { spawn } = require('child_process');
 
     const t = new JsonBlobTransform();

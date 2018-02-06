@@ -1,6 +1,6 @@
 import { Transform } from "stream";
 
-export default class JsonBlobTransform extends Transform {
+class JsonBlobTransform extends Transform {
   expect: string = "";
   depth: number = 0;
   internalBuffer: string = "";
@@ -101,3 +101,5 @@ export default class JsonBlobTransform extends Transform {
     return [JSON.stringify(obj)];
   }
 }
+
+export = JsonBlobTransform;
