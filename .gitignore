@@ -58,3 +58,5 @@ typings/
 .env
 
 dist/
+go-test/main
+c-test/main

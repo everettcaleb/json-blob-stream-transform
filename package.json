@@ -1,11 +1,15 @@
 {
-  "name": "json-blob-stream-transform",
+  "name": "json-blob-transform",
   "version": "1.0.0",
   "description": "Node.js Stream Transform for reading arbitrary JSON blobs from a stream (like Standard Input)",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "npx tsc",
+    "build:c-test": "cd c-test && gcc main.c -o main && cd ..",
+    "build:go-test": "cd go-test && go build -o main && cd ..",
+    "run:c-test": "cd c-test && node c-test.js && cd ..",
+    "run:go-test": "cd go-test && node go-test.js && cd ..",
     "lint": "npx tslint -c tslint.json -p tsconfig.json",
     "test": "npx mocha -r ts-node/register test/**/*.ts",
     "prepare": "npm run build && npm run lint && npm run test"
